@@ -1,0 +1,44 @@
+import math
+
+L = 78
+a1310 = 0.35
+a1550 = 0.24
+ap = 0.5
+Np = 4
+as1310 = 0.2
+as1550 = 0.1
+Psid = 3
+Sfot = -18.3
+
+
+def main():
+    Ns = math.ceil(L/4.7-1)
+    print("Ns = ", Ns)
+    A1310 = a1310 * L + ap * Np + as1310 * Ns + 3
+    print("A1310 = ", A1310)
+    A1550 = a1550 * L + ap * Np + as1550 * Ns + 3
+    print("A1550 = ", A1550)
+    P_PR = Psid - Sfot
+    print("P_PR = ", P_PR)
+    Lmax1310 = P_PR - A1310
+    print("Lmax1310 = ", Lmax1310)
+    Lmin1310 = P_PR - A1310 - 22
+    print("Lmin1310 = ", Lmin1310)
+    Lmax1550 = P_PR - A1550
+    print("Lmax1550 = ", Lmax1550)
+    Lmin1550 = P_PR - A1550 - 22
+    print("Lmin1550 = ", Lmin1550)
+    Dsr1310 = Lmax1310 + 3
+    print("Dsr1310 = ", Dsr1310)
+    Dsr1550 = Lmax1550 + 3
+    print("Dsr1550 = ", Dsr1550)
+    NkanR1310 = Psid - A1310 - 30
+    print("NkanR1310 = ", NkanR1310)
+    NkanR1550 = Psid - A1550 - 30
+    print("NkanR1550 = ", NkanR1550)
+    T_DOV = 0.2 * 15 * 78
+    print("T_DOV = ",T_DOV)
+
+
+if __name__ == '__main__':
+    main()
